@@ -1,0 +1,14 @@
+{
+  "name": "playwright-ts-github-actions",
+  "version": "1.0.0",
+  "description": "template for Playwright with Typescript and Github Actions CI",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.8.5"
+  }
+}
