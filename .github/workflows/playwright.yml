@@ -29,7 +29,7 @@ jobs:
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
       - name: Upload blob report to GitHub Actions Artifacts
-        if: ${{ success() }}
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: blob-report-${{ matrix.shardIndex }}
@@ -55,6 +55,7 @@ jobs:
         with:
           path: all-blob-reports
           pattern: blob-report-*
+          merge-multiple: true
 
       - name: Merge into HTML Report    
         run: npx playwright merge-reports --reporter html ./all-blob-reports
